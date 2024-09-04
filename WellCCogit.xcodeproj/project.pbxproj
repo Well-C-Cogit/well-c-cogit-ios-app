@@ -30,6 +30,12 @@
 		12E912EE2C886EAE00F3D41C /* RxTest-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912ED2C886EAE00F3D41C /* RxTest-Dynamic */; };
 		12E912F02C886ECC00F3D41C /* InputOutputAttachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912EF2C886ECC00F3D41C /* InputOutputAttachable.swift */; };
 		12E912F22C886EE400F3D41C /* ViewModelCoordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912F12C886EE400F3D41C /* ViewModelCoordinatable.swift */; };
+		12E912F72C886FE500F3D41C /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912F62C886FE500F3D41C /* BaseCoordinator.swift */; };
+		12E912F92C88708900F3D41C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912F82C88708900F3D41C /* AppCoordinator.swift */; };
+		12E912FB2C88709F00F3D41C /* ReactiveCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912FA2C88709F00F3D41C /* ReactiveCoordinator.swift */; };
+		12E912FD2C8870BD00F3D41C /* CoordinatorForwardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912FC2C8870BD00F3D41C /* CoordinatorForwardable.swift */; };
+		12E912FF2C88712E00F3D41C /* CoordinatorTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912FE2C88712E00F3D41C /* CoordinatorTransitionType.swift */; };
+		12E913012C88716300F3D41C /* CoordinatorTransitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E913002C88716300F3D41C /* CoordinatorTransitable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		12E912D82C886DDA00F3D41C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		12E912EF2C886ECC00F3D41C /* InputOutputAttachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOutputAttachable.swift; sourceTree = "<group>"; };
 		12E912F12C886EE400F3D41C /* ViewModelCoordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelCoordinatable.swift; sourceTree = "<group>"; };
+		12E912F62C886FE500F3D41C /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		12E912F82C88708900F3D41C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		12E912FA2C88709F00F3D41C /* ReactiveCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveCoordinator.swift; sourceTree = "<group>"; };
+		12E912FC2C8870BD00F3D41C /* CoordinatorForwardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorForwardable.swift; sourceTree = "<group>"; };
+		12E912FE2C88712E00F3D41C /* CoordinatorTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTransitionType.swift; sourceTree = "<group>"; };
+		12E913002C88716300F3D41C /* CoordinatorTransitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTransitable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				12E912F32C886F6B00F3D41C /* Base */,
+				12E912F82C88708900F3D41C /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -172,6 +185,11 @@
 		12E912F32C886F6B00F3D41C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				12E912F62C886FE500F3D41C /* BaseCoordinator.swift */,
+				12E912FA2C88709F00F3D41C /* ReactiveCoordinator.swift */,
+				12E912FE2C88712E00F3D41C /* CoordinatorTransitionType.swift */,
+				12E912FC2C8870BD00F3D41C /* CoordinatorForwardable.swift */,
+				12E913002C88716300F3D41C /* CoordinatorTransitable.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -270,9 +288,15 @@
 			files = (
 				12E912D92C886DDA00F3D41C /* ViewModelType.swift in Sources */,
 				12E912B62C886AA200F3D41C /* ViewController.swift in Sources */,
+				12E912FB2C88709F00F3D41C /* ReactiveCoordinator.swift in Sources */,
 				12E912B22C886AA200F3D41C /* AppDelegate.swift in Sources */,
+				12E913012C88716300F3D41C /* CoordinatorTransitable.swift in Sources */,
 				12E912B42C886AA200F3D41C /* SceneDelegate.swift in Sources */,
+				12E912F92C88708900F3D41C /* AppCoordinator.swift in Sources */,
+				12E912F72C886FE500F3D41C /* BaseCoordinator.swift in Sources */,
 				12E912F22C886EE400F3D41C /* ViewModelCoordinatable.swift in Sources */,
+				12E912FF2C88712E00F3D41C /* CoordinatorTransitionType.swift in Sources */,
+				12E912FD2C8870BD00F3D41C /* CoordinatorForwardable.swift in Sources */,
 				12E912F02C886ECC00F3D41C /* InputOutputAttachable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
