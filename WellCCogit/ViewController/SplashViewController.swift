@@ -46,8 +46,11 @@ final class SplashViewController: BaseViewController,
     
     func bindViewModel() {
         self.viewModel.input.fetchData
-            .bind(to: self.viewModel.coordinate.goHome)
+            .bind(to: self.viewModel.coordinate.goSignIn)
             .disposed(by: disposeBag)
+        
+        LoginManager.shared.getUser()
+//        LoginManager.shared.getRepos()
     }
 }
 

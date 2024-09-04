@@ -6,14 +6,23 @@
 //
 
 import UIKit
+import KeychainSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    private let userDefaultsKey = "hasLaunchedBefore"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: userDefaultsKey)
+        
+        if !hasLaunchedBefore {
+            KeychainSwift().clear()
+            UserDefaults.standard.set(true, forKey: userDefaultsKey) // 플래그 설정
+            UserDefaults.standard.synchronize() // 동기화
+        }
+        
         return true
     }
 

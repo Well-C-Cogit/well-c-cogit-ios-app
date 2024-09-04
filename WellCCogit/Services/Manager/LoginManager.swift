@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Alamofire
 import KeychainSwift
+import RxSwift
 
 final class LoginManager {
     static let shared = LoginManager()
@@ -17,7 +18,9 @@ final class LoginManager {
     
     private let clientId: String = "Ov23liBmOhUBo16eKz6I"
     private let clientSecret: String = "1a4e75d98399b36d5d7583964491069ebddca5dc"
+    
     private let scope: String = "repo gist user"
+    
     private let githubURL: String = "https://github.com"
     private let githubApiURL: String = "https://api.github.com"
     
@@ -37,11 +40,13 @@ final class LoginManager {
     }
     
     func requestAccessToken(with code: String) {
-              let parameters = ["client_id": clientId,
-                                "client_secret": clientSecret,
-                                "code": code]
+        let parameters = ["client_id": clientId,
+                          "client_secret": clientSecret,
+                          "code": code]
         
         let headers: HTTPHeaders = ["Accept": "application/json"]
+        
+        let url = githubURL + ApiPath.Github.ACCESS_TOKEN.rawValue
         
         AF.request(githubURL + ApiPath.Github.ACCESS_TOKEN.rawValue,
                    method: .post, parameters: parameters,
@@ -59,6 +64,8 @@ final class LoginManager {
     }
     
       func getUser() {
+          
+          
           let accessToken = KeychainSwift().get("accessToken") ?? ""
           let headers: HTTPHeaders = ["Accept": "application/vnd.github.v3+json",
                                       "Authorization": "token \(accessToken)"]
