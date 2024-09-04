@@ -31,13 +31,19 @@ final class AppCoordinator: ReactiveCoordinator<Void>,
         self.splashCoordinator = self.coordinateToSplash()
             .asObservable()
             .subscribe(onNext: { [weak self] result in
-                
+                self?.handleSplashResult(result: result)
             })
     }
 }
 
+//MARK: -
 private extension AppCoordinator {
-    func coordinateToSplash() -> Observable<Void> {
+    func coordinateToSplash() -> Observable<SplashCoordinatorResult> {
+        let coordinator = SplashCoordinator(navigationController: navigationController)
+        return self.coordinate(to: coordinator, type: .push, animated: false)
+    }
+    
+    func coordinateToSignIn() -> Observable<Void> {
         return .just(())
     }
     
@@ -46,3 +52,22 @@ private extension AppCoordinator {
     }
 }
 
+//MARK: -
+private extension AppCoordinator {
+    func handleSplashResult(result: SplashCoordinatorResult) {
+        switch result {
+        case .goSignIn:
+            self.coordinateToSignIn()
+                .subscribe(onNext: { })
+                .disposed(by: disposeBag)
+            
+        case .goHome:
+            self.coordinateToHome()
+                .subscribe(onNext: { })
+                .disposed(by: disposeBag)
+            
+        case .pop:
+            return
+        }
+    }
+}

@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		128A36B02C8877C800580579 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36AF2C8877C800580579 /* SplashCoordinator.swift */; };
+		128A36B22C8877E200580579 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36B12C8877E200580579 /* SplashViewModel.swift */; };
+		128A36B42C8877FA00580579 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36B32C8877FA00580579 /* SplashViewController.swift */; };
+		128A36B72C88781A00580579 /* ViewModelBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36B62C88781A00580579 /* ViewModelBindable.swift */; };
+		128A36B92C88782B00580579 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36B82C88782B00580579 /* BaseViewController.swift */; };
+		128A36BB2C8878A000580579 /* RepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36BA2C8878A000580579 /* RepositoryType.swift */; };
+		128A36BD2C8878AF00580579 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36BC2C8878AF00580579 /* AuthRepository.swift */; };
+		128A36BF2C8878DA00580579 /* SplashUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36BE2C8878DA00580579 /* SplashUsecase.swift */; };
 		12E912B22C886AA200F3D41C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912B12C886AA200F3D41C /* AppDelegate.swift */; };
 		12E912B42C886AA200F3D41C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912B32C886AA200F3D41C /* SceneDelegate.swift */; };
-		12E912B62C886AA200F3D41C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912B52C886AA200F3D41C /* ViewController.swift */; };
 		12E912B92C886AA200F3D41C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 12E912B82C886AA200F3D41C /* Base */; };
 		12E912BB2C886AA400F3D41C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E912BA2C886AA400F3D41C /* Assets.xcassets */; };
 		12E912BE2C886AA400F3D41C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 12E912BD2C886AA400F3D41C /* Base */; };
@@ -26,10 +33,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		128A36AF2C8877C800580579 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		128A36B12C8877E200580579 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		128A36B32C8877FA00580579 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		128A36B62C88781A00580579 /* ViewModelBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindable.swift; sourceTree = "<group>"; };
+		128A36B82C88782B00580579 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		128A36BA2C8878A000580579 /* RepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryType.swift; sourceTree = "<group>"; };
+		128A36BC2C8878AF00580579 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		128A36BE2C8878DA00580579 /* SplashUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUsecase.swift; sourceTree = "<group>"; };
 		12E912AE2C886AA200F3D41C /* WellCCogit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellCCogit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E912B12C886AA200F3D41C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12E912B32C886AA200F3D41C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		12E912B52C886AA200F3D41C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		12E912B82C886AA200F3D41C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12E912BA2C886AA400F3D41C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12E912BD2C886AA400F3D41C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		128A36B52C88781100580579 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				128A36B62C88781A00580579 /* ViewModelBindable.swift */,
+				128A36B82C88782B00580579 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		12E912A52C886AA200F3D41C = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				12E912D72C886DCF00F3D41C /* Base */,
+				128A36B12C8877E200580579 /* SplashViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -116,7 +140,8 @@
 		12E912D22C886CF500F3D41C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				12E912B52C886AA200F3D41C /* ViewController.swift */,
+				128A36B52C88781100580579 /* Base */,
+				128A36B32C8877FA00580579 /* SplashViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -126,6 +151,7 @@
 			children = (
 				12E912F32C886F6B00F3D41C /* Base */,
 				12E912F82C88708900F3D41C /* AppCoordinator.swift */,
+				128A36AF2C8877C800580579 /* SplashCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -133,6 +159,7 @@
 		12E912D42C886D0A00F3D41C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				128A36BE2C8878DA00580579 /* SplashUsecase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -140,6 +167,8 @@
 		12E912D52C886D1200F3D41C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				128A36BA2C8878A000580579 /* RepositoryType.swift */,
+				128A36BC2C8878AF00580579 /* AuthRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -305,16 +334,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128A36BF2C8878DA00580579 /* SplashUsecase.swift in Sources */,
 				12E912D92C886DDA00F3D41C /* ViewModelType.swift in Sources */,
-				12E912B62C886AA200F3D41C /* ViewController.swift in Sources */,
+				128A36B02C8877C800580579 /* SplashCoordinator.swift in Sources */,
+				128A36B22C8877E200580579 /* SplashViewModel.swift in Sources */,
 				12E912FB2C88709F00F3D41C /* ReactiveCoordinator.swift in Sources */,
 				12E912B22C886AA200F3D41C /* AppDelegate.swift in Sources */,
+				128A36B42C8877FA00580579 /* SplashViewController.swift in Sources */,
 				12E913012C88716300F3D41C /* CoordinatorTransitable.swift in Sources */,
 				12E912B42C886AA200F3D41C /* SceneDelegate.swift in Sources */,
+				128A36BB2C8878A000580579 /* RepositoryType.swift in Sources */,
 				12E912F92C88708900F3D41C /* AppCoordinator.swift in Sources */,
+				128A36B72C88781A00580579 /* ViewModelBindable.swift in Sources */,
 				12E912F72C886FE500F3D41C /* BaseCoordinator.swift in Sources */,
 				12E912F22C886EE400F3D41C /* ViewModelCoordinatable.swift in Sources */,
 				12E912FF2C88712E00F3D41C /* CoordinatorTransitionType.swift in Sources */,
+				128A36B92C88782B00580579 /* BaseViewController.swift in Sources */,
+				128A36BD2C8878AF00580579 /* AuthRepository.swift in Sources */,
 				12E912FD2C8870BD00F3D41C /* CoordinatorForwardable.swift in Sources */,
 				12E912F02C886ECC00F3D41C /* InputOutputAttachable.swift in Sources */,
 			);

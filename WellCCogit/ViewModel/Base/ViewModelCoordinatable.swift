@@ -14,6 +14,10 @@ protocol ViewModelCoordinatable: DefaultCoordinatable {
     var coordinate: Coordinate { get set }
 }
 
+extension ViewModelCoordinatable {
+    var coordinate: DefaultCoordinate { return coordinate }
+}
+
 protocol DefaultCoordinatable {
     var coordinate: DefaultCoordinate { get }
 }
@@ -21,3 +25,4 @@ protocol DefaultCoordinatable {
 protocol DefaultCoordinate {
     var close: PublishRelay<Void> { get set }
 }
+
