@@ -15,6 +15,15 @@
 		128A36BB2C8878A000580579 /* RepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36BA2C8878A000580579 /* RepositoryType.swift */; };
 		128A36BD2C8878AF00580579 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36BC2C8878AF00580579 /* AuthRepository.swift */; };
 		128A36BF2C8878DA00580579 /* SplashUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36BE2C8878DA00580579 /* SplashUsecase.swift */; };
+		128A36C12C887C7400580579 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36C02C887C7400580579 /* SignInViewController.swift */; };
+		128A36C32C887C9D00580579 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36C22C887C9D00580579 /* SignInViewModel.swift */; };
+		128A36C52C887CBB00580579 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36C42C887CBB00580579 /* SignInCoordinator.swift */; };
+		128A36C82C88894F00580579 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36C72C88894F00580579 /* LoginManager.swift */; };
+		128A36CA2C8889EF00580579 /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36C92C8889EF00580579 /* ApiPath.swift */; };
+		128A36CD2C889F6600580579 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36CC2C889F6600580579 /* User.swift */; };
+		128A36D32C88A40F00580579 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36D22C88A40F00580579 /* NetworkService.swift */; };
+		128A36D62C88A6C400580579 /* NetworkService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36D52C88A6C400580579 /* NetworkService+Rx.swift */; };
+		128A36D82C88B04D00580579 /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36D72C88B04D00580579 /* AuthInterceptor.swift */; };
 		12E912B22C886AA200F3D41C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912B12C886AA200F3D41C /* AppDelegate.swift */; };
 		12E912B42C886AA200F3D41C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912B32C886AA200F3D41C /* SceneDelegate.swift */; };
 		12E912B92C886AA200F3D41C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 12E912B82C886AA200F3D41C /* Base */; };
@@ -41,6 +50,15 @@
 		128A36BA2C8878A000580579 /* RepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryType.swift; sourceTree = "<group>"; };
 		128A36BC2C8878AF00580579 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		128A36BE2C8878DA00580579 /* SplashUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUsecase.swift; sourceTree = "<group>"; };
+		128A36C02C887C7400580579 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		128A36C22C887C9D00580579 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		128A36C42C887CBB00580579 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		128A36C72C88894F00580579 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		128A36C92C8889EF00580579 /* ApiPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPath.swift; sourceTree = "<group>"; };
+		128A36CC2C889F6600580579 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		128A36D22C88A40F00580579 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		128A36D52C88A6C400580579 /* NetworkService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Rx.swift"; sourceTree = "<group>"; };
+		128A36D72C88B04D00580579 /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
 		12E912AE2C886AA200F3D41C /* WellCCogit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellCCogit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E912B12C886AA200F3D41C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12E912B32C886AA200F3D41C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +101,65 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		128A36C62C88893E00580579 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				128A36C72C88894F00580579 /* LoginManager.swift */,
+				128A36C92C8889EF00580579 /* ApiPath.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		128A36CB2C889F5C00580579 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				128A36CC2C889F6600580579 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		128A36CE2C88A3ED00580579 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				128A36C62C88893E00580579 /* Manager */,
+				128A36CF2C88A3F900580579 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		128A36CF2C88A3F900580579 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				128A36D12C88A40800580579 /* Router */,
+				128A36D02C88A40300580579 /* Interceptor */,
+				128A36D22C88A40F00580579 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		128A36D02C88A40300580579 /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				128A36D72C88B04D00580579 /* AuthInterceptor.swift */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		128A36D12C88A40800580579 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		128A36D42C88A6B800580579 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				128A36D52C88A6C400580579 /* NetworkService+Rx.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		12E912A52C886AA200F3D41C = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +181,13 @@
 		12E912B02C886AA200F3D41C /* WellCCogit */ = {
 			isa = PBXGroup;
 			children = (
+				128A36D42C88A6B800580579 /* Extensions */,
+				128A36CE2C88A3ED00580579 /* Services */,
 				12E912D62C886D1A00F3D41C /* Common */,
 				12E912D42C886D0A00F3D41C /* Domain */,
 				12E912D52C886D1200F3D41C /* Repository */,
 				12E912D32C886D0000F3D41C /* Coordinator */,
+				128A36CB2C889F5C00580579 /* Model */,
 				12E912D12C886CF000F3D41C /* ViewModel */,
 				12E912D02C886CEC00F3D41C /* View */,
 				12E912D22C886CF500F3D41C /* ViewController */,
@@ -133,6 +213,7 @@
 			children = (
 				12E912D72C886DCF00F3D41C /* Base */,
 				128A36B12C8877E200580579 /* SplashViewModel.swift */,
+				128A36C22C887C9D00580579 /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -142,6 +223,7 @@
 			children = (
 				128A36B52C88781100580579 /* Base */,
 				128A36B32C8877FA00580579 /* SplashViewController.swift */,
+				128A36C02C887C7400580579 /* SignInViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -152,6 +234,7 @@
 				12E912F32C886F6B00F3D41C /* Base */,
 				12E912F82C88708900F3D41C /* AppCoordinator.swift */,
 				128A36AF2C8877C800580579 /* SplashCoordinator.swift */,
+				128A36C42C887CBB00580579 /* SignInCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -335,8 +418,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				128A36BF2C8878DA00580579 /* SplashUsecase.swift in Sources */,
+				128A36D82C88B04D00580579 /* AuthInterceptor.swift in Sources */,
 				12E912D92C886DDA00F3D41C /* ViewModelType.swift in Sources */,
 				128A36B02C8877C800580579 /* SplashCoordinator.swift in Sources */,
+				128A36CD2C889F6600580579 /* User.swift in Sources */,
 				128A36B22C8877E200580579 /* SplashViewModel.swift in Sources */,
 				12E912FB2C88709F00F3D41C /* ReactiveCoordinator.swift in Sources */,
 				12E912B22C886AA200F3D41C /* AppDelegate.swift in Sources */,
@@ -346,12 +431,19 @@
 				128A36BB2C8878A000580579 /* RepositoryType.swift in Sources */,
 				12E912F92C88708900F3D41C /* AppCoordinator.swift in Sources */,
 				128A36B72C88781A00580579 /* ViewModelBindable.swift in Sources */,
+				128A36D62C88A6C400580579 /* NetworkService+Rx.swift in Sources */,
+				128A36C12C887C7400580579 /* SignInViewController.swift in Sources */,
+				128A36C82C88894F00580579 /* LoginManager.swift in Sources */,
 				12E912F72C886FE500F3D41C /* BaseCoordinator.swift in Sources */,
+				128A36CA2C8889EF00580579 /* ApiPath.swift in Sources */,
 				12E912F22C886EE400F3D41C /* ViewModelCoordinatable.swift in Sources */,
 				12E912FF2C88712E00F3D41C /* CoordinatorTransitionType.swift in Sources */,
 				128A36B92C88782B00580579 /* BaseViewController.swift in Sources */,
+				128A36C32C887C9D00580579 /* SignInViewModel.swift in Sources */,
+				128A36C52C887CBB00580579 /* SignInCoordinator.swift in Sources */,
 				128A36BD2C8878AF00580579 /* AuthRepository.swift in Sources */,
 				12E912FD2C8870BD00F3D41C /* CoordinatorForwardable.swift in Sources */,
+				128A36D32C88A40F00580579 /* NetworkService.swift in Sources */,
 				12E912F02C886ECC00F3D41C /* InputOutputAttachable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

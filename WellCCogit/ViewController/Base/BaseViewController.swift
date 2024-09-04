@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 class BaseViewController: UIViewController {
     
@@ -14,8 +16,6 @@ class BaseViewController: UIViewController {
         configureUI()
     }
     
-    func configureUI() {
-        
-    }
+    func configureUI() { }
 }
 

@@ -43,8 +43,9 @@ private extension AppCoordinator {
         return self.coordinate(to: coordinator, type: .push, animated: false)
     }
     
-    func coordinateToSignIn() -> Observable<Void> {
-        return .just(())
+    func coordinateToSignIn() -> Observable<SignInCoordinatorResult> {
+        let coordinator = SignInCoordinator(navigationController: navigationController)
+        return self.coordinate(to: coordinator, type: .push, animated: false)
     }
     
     func coordinateToHome() -> Observable<Void> {
@@ -58,7 +59,7 @@ private extension AppCoordinator {
         switch result {
         case .goSignIn:
             self.coordinateToSignIn()
-                .subscribe(onNext: { })
+                .subscribe(onNext: { _ in })
                 .disposed(by: disposeBag)
             
         case .goHome:

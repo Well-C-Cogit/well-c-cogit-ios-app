@@ -24,6 +24,7 @@ final class SplashCoordinator: ReactiveCoordinator<SplashCoordinatorResult>,
         let viewModel = SplashViewModel(usecase: usecase)
         let viewController = SplashViewController(viewModel: viewModel)
        
+        let goSignIn = viewModel.coordinate.goSignIn.map { SplashCoordinatorResult.goSignIn }
         let goHome = viewModel.coordinate.goHome.map { SplashCoordinatorResult.goHome }
         
         self.transition(to: viewController,
@@ -31,7 +32,8 @@ final class SplashCoordinator: ReactiveCoordinator<SplashCoordinatorResult>,
                         type: .push,
                         animated: false)
         
-        return Observable.merge(goHome)
+        return Observable.merge(goHome,
+                                goSignIn)
             .take(1)
             .do { [weak self] _ in
                 self?.targetPop(viewController, afterDelay: 0.5)

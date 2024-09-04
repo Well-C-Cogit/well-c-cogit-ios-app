@@ -19,6 +19,7 @@ final class SplashViewModel: ViewModelType {
    
     struct Coordinate: DefaultCoordinate {
         var close: PublishRelay<Void>
+        var goSignIn: PublishRelay<Void>
         var goHome: PublishRelay<Void>
     }
     
@@ -29,6 +30,7 @@ final class SplashViewModel: ViewModelType {
     lazy var output: Output = transform(input)
     
     var coordinate: Coordinate = Coordinate(close: PublishRelay<Void>(),
+                                            goSignIn: PublishRelay<Void>(),
                                             goHome: PublishRelay<Void>())
     let usecase: SplashUsecase
     

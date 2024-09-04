@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AuthRepositoryType {
     func signIn()
@@ -14,5 +15,13 @@ protocol AuthRepositoryType {
 struct AuthRepositoryTest: AuthRepositoryType {
     func signIn() {
         print("Test - Sign In")
+    }
+}
+
+struct GithubAuthRepository: AuthRepositoryType {
+    
+    
+    func signIn() {
+        
     }
 }
