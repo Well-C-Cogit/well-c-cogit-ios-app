@@ -13,21 +13,7 @@
 		12E912B92C886AA200F3D41C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 12E912B82C886AA200F3D41C /* Base */; };
 		12E912BB2C886AA400F3D41C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E912BA2C886AA400F3D41C /* Assets.xcassets */; };
 		12E912BE2C886AA400F3D41C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 12E912BD2C886AA400F3D41C /* Base */; };
-		12E912C72C886C9700F3D41C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912C62C886C9700F3D41C /* Alamofire */; };
-		12E912C92C886C9700F3D41C /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912C82C886C9700F3D41C /* AlamofireDynamic */; };
-		12E912CC2C886C9D00F3D41C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912CB2C886C9D00F3D41C /* SnapKit */; };
-		12E912CE2C886C9D00F3D41C /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912CD2C886C9D00F3D41C /* SnapKit-Dynamic */; };
 		12E912D92C886DDA00F3D41C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912D82C886DDA00F3D41C /* ViewModelType.swift */; };
-		12E912DC2C886EAE00F3D41C /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912DB2C886EAE00F3D41C /* RxBlocking */; };
-		12E912DE2C886EAE00F3D41C /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912DD2C886EAE00F3D41C /* RxBlocking-Dynamic */; };
-		12E912E02C886EAE00F3D41C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912DF2C886EAE00F3D41C /* RxCocoa */; };
-		12E912E22C886EAE00F3D41C /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912E12C886EAE00F3D41C /* RxCocoa-Dynamic */; };
-		12E912E42C886EAE00F3D41C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912E32C886EAE00F3D41C /* RxRelay */; };
-		12E912E62C886EAE00F3D41C /* RxRelay-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912E52C886EAE00F3D41C /* RxRelay-Dynamic */; };
-		12E912E82C886EAE00F3D41C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912E72C886EAE00F3D41C /* RxSwift */; };
-		12E912EA2C886EAE00F3D41C /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912E92C886EAE00F3D41C /* RxSwift-Dynamic */; };
-		12E912EC2C886EAE00F3D41C /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912EB2C886EAE00F3D41C /* RxTest */; };
-		12E912EE2C886EAE00F3D41C /* RxTest-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912ED2C886EAE00F3D41C /* RxTest-Dynamic */; };
 		12E912F02C886ECC00F3D41C /* InputOutputAttachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912EF2C886ECC00F3D41C /* InputOutputAttachable.swift */; };
 		12E912F22C886EE400F3D41C /* ViewModelCoordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912F12C886EE400F3D41C /* ViewModelCoordinatable.swift */; };
 		12E912F72C886FE500F3D41C /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912F62C886FE500F3D41C /* BaseCoordinator.swift */; };
@@ -36,6 +22,7 @@
 		12E912FD2C8870BD00F3D41C /* CoordinatorForwardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912FC2C8870BD00F3D41C /* CoordinatorForwardable.swift */; };
 		12E912FF2C88712E00F3D41C /* CoordinatorTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912FE2C88712E00F3D41C /* CoordinatorTransitionType.swift */; };
 		12E913012C88716300F3D41C /* CoordinatorTransitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E913002C88716300F3D41C /* CoordinatorTransitable.swift */; };
+		AE07B9EAA0AE360D67404614 /* Pods_WellCCogit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E625008B680E0ECE5239A10 /* Pods_WellCCogit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +43,9 @@
 		12E912FC2C8870BD00F3D41C /* CoordinatorForwardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorForwardable.swift; sourceTree = "<group>"; };
 		12E912FE2C88712E00F3D41C /* CoordinatorTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTransitionType.swift; sourceTree = "<group>"; };
 		12E913002C88716300F3D41C /* CoordinatorTransitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTransitable.swift; sourceTree = "<group>"; };
+		1E625008B680E0ECE5239A10 /* Pods_WellCCogit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WellCCogit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED5AAC9C4549ADC5D8FBD7D /* Pods-WellCCogit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellCCogit.debug.xcconfig"; path = "Target Support Files/Pods-WellCCogit/Pods-WellCCogit.debug.xcconfig"; sourceTree = "<group>"; };
+		E2010AD964C3AA6D2FAD64BC /* Pods-WellCCogit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellCCogit.release.xcconfig"; path = "Target Support Files/Pods-WellCCogit/Pods-WellCCogit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,20 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12E912EC2C886EAE00F3D41C /* RxTest in Frameworks */,
-				12E912E42C886EAE00F3D41C /* RxRelay in Frameworks */,
-				12E912E22C886EAE00F3D41C /* RxCocoa-Dynamic in Frameworks */,
-				12E912CC2C886C9D00F3D41C /* SnapKit in Frameworks */,
-				12E912C72C886C9700F3D41C /* Alamofire in Frameworks */,
-				12E912EA2C886EAE00F3D41C /* RxSwift-Dynamic in Frameworks */,
-				12E912EE2C886EAE00F3D41C /* RxTest-Dynamic in Frameworks */,
-				12E912C92C886C9700F3D41C /* AlamofireDynamic in Frameworks */,
-				12E912E02C886EAE00F3D41C /* RxCocoa in Frameworks */,
-				12E912E62C886EAE00F3D41C /* RxRelay-Dynamic in Frameworks */,
-				12E912DE2C886EAE00F3D41C /* RxBlocking-Dynamic in Frameworks */,
-				12E912CE2C886C9D00F3D41C /* SnapKit-Dynamic in Frameworks */,
-				12E912DC2C886EAE00F3D41C /* RxBlocking in Frameworks */,
-				12E912E82C886EAE00F3D41C /* RxSwift in Frameworks */,
+				AE07B9EAA0AE360D67404614 /* Pods_WellCCogit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +65,8 @@
 			children = (
 				12E912B02C886AA200F3D41C /* WellCCogit */,
 				12E912AF2C886AA200F3D41C /* Products */,
+				AD52BF170FE2FE3211BB8DE9 /* Pods */,
+				64E045ED417DCC1943739201 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +173,23 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		64E045ED417DCC1943739201 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E625008B680E0ECE5239A10 /* Pods_WellCCogit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD52BF170FE2FE3211BB8DE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8ED5AAC9C4549ADC5D8FBD7D /* Pods-WellCCogit.debug.xcconfig */,
+				E2010AD964C3AA6D2FAD64BC /* Pods-WellCCogit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,31 +197,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12E912C22C886AA400F3D41C /* Build configuration list for PBXNativeTarget "WellCCogit" */;
 			buildPhases = (
+				8E14A3C386E2F0B2C28D4CA8 /* [CP] Check Pods Manifest.lock */,
 				12E912AA2C886AA200F3D41C /* Sources */,
 				12E912AB2C886AA200F3D41C /* Frameworks */,
 				12E912AC2C886AA200F3D41C /* Resources */,
+				FE1A43997EABCCF9079368FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = WellCCogit;
-			packageProductDependencies = (
-				12E912C62C886C9700F3D41C /* Alamofire */,
-				12E912C82C886C9700F3D41C /* AlamofireDynamic */,
-				12E912CB2C886C9D00F3D41C /* SnapKit */,
-				12E912CD2C886C9D00F3D41C /* SnapKit-Dynamic */,
-				12E912DB2C886EAE00F3D41C /* RxBlocking */,
-				12E912DD2C886EAE00F3D41C /* RxBlocking-Dynamic */,
-				12E912DF2C886EAE00F3D41C /* RxCocoa */,
-				12E912E12C886EAE00F3D41C /* RxCocoa-Dynamic */,
-				12E912E32C886EAE00F3D41C /* RxRelay */,
-				12E912E52C886EAE00F3D41C /* RxRelay-Dynamic */,
-				12E912E72C886EAE00F3D41C /* RxSwift */,
-				12E912E92C886EAE00F3D41C /* RxSwift-Dynamic */,
-				12E912EB2C886EAE00F3D41C /* RxTest */,
-				12E912ED2C886EAE00F3D41C /* RxTest-Dynamic */,
-			);
 			productName = WellCCogit;
 			productReference = 12E912AE2C886AA200F3D41C /* WellCCogit.app */;
 			productType = "com.apple.product-type.application";
@@ -254,11 +236,6 @@
 				Base,
 			);
 			mainGroup = 12E912A52C886AA200F3D41C;
-			packageReferences = (
-				12E912C52C886C9700F3D41C /* XCRemoteSwiftPackageReference "Alamofire" */,
-				12E912CA2C886C9D00F3D41C /* XCRemoteSwiftPackageReference "SnapKit" */,
-				12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */,
-			);
 			productRefGroup = 12E912AF2C886AA200F3D41C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -280,6 +257,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E14A3C386E2F0B2C28D4CA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WellCCogit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE1A43997EABCCF9079368FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WellCCogit/Pods-WellCCogit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WellCCogit/Pods-WellCCogit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WellCCogit/Pods-WellCCogit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		12E912AA2C886AA200F3D41C /* Sources */ = {
@@ -360,7 +379,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -423,7 +442,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -444,6 +463,7 @@
 		};
 		12E912C32C886AA400F3D41C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ED5AAC9C4549ADC5D8FBD7D /* Pods-WellCCogit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -472,6 +492,7 @@
 		};
 		12E912C42C886AA400F3D41C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2010AD964C3AA6D2FAD64BC /* Pods-WellCCogit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -520,106 +541,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		12E912C52C886C9700F3D41C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
-		12E912CA2C886C9D00F3D41C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
-			};
-		};
-		12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.7.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		12E912C62C886C9700F3D41C /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912C52C886C9700F3D41C /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		12E912C82C886C9700F3D41C /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912C52C886C9700F3D41C /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
-		};
-		12E912CB2C886C9D00F3D41C /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912CA2C886C9D00F3D41C /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		12E912CD2C886C9D00F3D41C /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912CA2C886C9D00F3D41C /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
-		12E912DB2C886EAE00F3D41C /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		12E912DD2C886EAE00F3D41C /* RxBlocking-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxBlocking-Dynamic";
-		};
-		12E912DF2C886EAE00F3D41C /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		12E912E12C886EAE00F3D41C /* RxCocoa-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxCocoa-Dynamic";
-		};
-		12E912E32C886EAE00F3D41C /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		12E912E52C886EAE00F3D41C /* RxRelay-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxRelay-Dynamic";
-		};
-		12E912E72C886EAE00F3D41C /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		12E912E92C886EAE00F3D41C /* RxSwift-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxSwift-Dynamic";
-		};
-		12E912EB2C886EAE00F3D41C /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
-		};
-		12E912ED2C886EAE00F3D41C /* RxTest-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 12E912DA2C886EAE00F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxTest-Dynamic";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12E912A62C886AA200F3D41C /* Project object */;
 }
