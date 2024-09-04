@@ -13,6 +13,10 @@
 		12E912B92C886AA200F3D41C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 12E912B82C886AA200F3D41C /* Base */; };
 		12E912BB2C886AA400F3D41C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E912BA2C886AA400F3D41C /* Assets.xcassets */; };
 		12E912BE2C886AA400F3D41C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 12E912BD2C886AA400F3D41C /* Base */; };
+		12E912C72C886C9700F3D41C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912C62C886C9700F3D41C /* Alamofire */; };
+		12E912C92C886C9700F3D41C /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912C82C886C9700F3D41C /* AlamofireDynamic */; };
+		12E912CC2C886C9D00F3D41C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912CB2C886C9D00F3D41C /* SnapKit */; };
+		12E912CE2C886C9D00F3D41C /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 12E912CD2C886C9D00F3D41C /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E912CC2C886C9D00F3D41C /* SnapKit in Frameworks */,
+				12E912C72C886C9700F3D41C /* Alamofire in Frameworks */,
+				12E912C92C886C9700F3D41C /* AlamofireDynamic in Frameworks */,
+				12E912CE2C886C9D00F3D41C /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,12 @@
 			dependencies = (
 			);
 			name = WellCCogit;
+			packageProductDependencies = (
+				12E912C62C886C9700F3D41C /* Alamofire */,
+				12E912C82C886C9700F3D41C /* AlamofireDynamic */,
+				12E912CB2C886C9D00F3D41C /* SnapKit */,
+				12E912CD2C886C9D00F3D41C /* SnapKit-Dynamic */,
+			);
 			productName = WellCCogit;
 			productReference = 12E912AE2C886AA200F3D41C /* WellCCogit.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,11 @@
 				Base,
 			);
 			mainGroup = 12E912A52C886AA200F3D41C;
+			packageReferences = (
+				12E912C52C886C9700F3D41C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				12E912CA2C886C9D00F3D41C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				12E912CF2C886CA300F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 12E912AF2C886AA200F3D41C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +382,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12E912C52C886C9700F3D41C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		12E912CA2C886C9D00F3D41C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		12E912CF2C886CA300F3D41C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12E912C62C886C9700F3D41C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12E912C52C886C9700F3D41C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		12E912C82C886C9700F3D41C /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12E912C52C886C9700F3D41C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		12E912CB2C886C9D00F3D41C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12E912CA2C886C9D00F3D41C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		12E912CD2C886C9D00F3D41C /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12E912CA2C886C9D00F3D41C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12E912A62C886AA200F3D41C /* Project object */;
 }
