@@ -19,8 +19,8 @@ final class SplashCoordinator: ReactiveCoordinator<SplashCoordinatorResult>,
     
     override func start(_ type: CoordinatorTransitionType) -> Observable<SplashCoordinatorResult> {
     
-        let repository = AuthRepositoryTest()
-        let usecase = SplashUsecase(repository: repository)
+        let repository = GithubOAuthRepository()
+        let usecase = OAuthUsecase(repository: repository)
         let viewModel = SplashViewModel(usecase: usecase)
         let viewController = SplashViewController(viewModel: viewModel)
        
@@ -39,7 +39,6 @@ final class SplashCoordinator: ReactiveCoordinator<SplashCoordinatorResult>,
                 self?.targetPop(viewController, afterDelay: 0.5)
             }
     }
-    
 }
 
 

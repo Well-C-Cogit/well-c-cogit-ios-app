@@ -13,9 +13,8 @@ final class AuthorizationInterceptor: RequestInterceptor {
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var request = urlRequest
         
-        if let accessToken = KeychainSwift().get("accesstoken") {
+        if let accessToken = KeychainSwift().get("accessToken") {
             request.headers.add(HTTPHeader(name: "Authorization", value: "token \(accessToken)"))
-//            request.headers.add(HTTPHeader(name: "Refresh-Token", value: userAuthorization.refreshToken))
         }
         completion(.success(request))
     }

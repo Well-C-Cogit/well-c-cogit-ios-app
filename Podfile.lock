@@ -8,6 +8,7 @@ PODS:
     - RxSwift (= 6.7.1)
   - RxSwift (6.7.1)
   - SnapKit (5.7.1)
+  - SwiftEventBus (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - RxRelay
   - RxSwift
   - SnapKit (~> 5.7.0)
+  - SwiftEventBus
 
 SPEC REPOS:
   trunk:
@@ -25,6 +27,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
+    - SwiftEventBus
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
@@ -33,7 +36,8 @@ SPEC CHECKSUMS:
   RxRelay: 4151ba01152436b08271e08410135e099880eae5
   RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SwiftEventBus: b30f617a6aca5a9336464b4d3f5931034762f2d5
 
-PODFILE CHECKSUM: 6144c75759e00e4da73494c35475b511f020becb
+PODFILE CHECKSUM: d8b935488c07861c277cb2e9922cb2e1f67e11a2
 
 COCOAPODS: 1.15.2

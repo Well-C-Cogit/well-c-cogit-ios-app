@@ -11,11 +11,13 @@ import RxRelay
 
 final class SplashViewModel: ViewModelType {
     
-    struct Input: DefaultInput {
-        var fetchData: PublishRelay<Void>
+    struct Input {
+        var transitionToNextScene: PublishRelay<Void>
     }
     
-    struct Output { }
+    struct Output { 
+        var user: PublishRelay<User?>
+    }
    
     struct Coordinate: DefaultCoordinate {
         var close: PublishRelay<Void>
@@ -25,24 +27,42 @@ final class SplashViewModel: ViewModelType {
     
     var disposeBag: DisposeBag = DisposeBag()
    
-    let input: Input = Input(fetchData: PublishRelay<Void>())
+    let input: Input = Input(transitionToNextScene: PublishRelay<Void>())
     
     lazy var output: Output = transform(input)
     
     var coordinate: Coordinate = Coordinate(close: PublishRelay<Void>(),
                                             goSignIn: PublishRelay<Void>(),
                                             goHome: PublishRelay<Void>())
-    let usecase: SplashUsecase
+    let usecase: OAuthUsecase
     
-    init(usecase: SplashUsecase) {
+    init(usecase: OAuthUsecase) {
         self.usecase = usecase
     }
     
     func transform(_ input: Input) -> Output {
-        print("\(#function)")
+        let user = PublishRelay<User?>()
         
-        return Output()
+        input.transitionToNextScene
+            .withUnretained(self)
+            .flatMap { (self, _) in self.usecase.getUser() }
+            .bind(to: user)
+            .disposed(by: disposeBag)
+    
+        user
+            .share()
+            .withUnretained(self)
+            .bind { (self, user) in
+                if let user {
+                    print("Logged in - \(user.name)")
+                    self.coordinate.goHome.accept(())
+                }
+                
+                self.coordinate.goSignIn.accept(())
+            }
+            .disposed(by: disposeBag)
+        
+        return Output(user: user)
     }
 }
-
 

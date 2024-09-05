@@ -17,7 +17,9 @@ final class SignInCoordinator: ReactiveCoordinator<SignInCoordinatorResult>,
     
     override func start(_ type: CoordinatorTransitionType) -> Observable<CoordinatorResultType> {
         
-        let viewModel = SignInViewModel()
+        let repository = GithubOAuthRepository()
+        let usecase = OAuthUsecase(repository: repository)
+        let viewModel = SignInViewModel(usecase: usecase)
         let viewController = SignInViewController(viewModel: viewModel)
         
         let goHome = viewModel.coordinate.goHome.map { SignInCoordinatorResult.goHome }

@@ -13,5 +13,5 @@ target 'WellCCogit' do
   pod 'Alamofire'
   pod 'SnapKit', '~> 5.7.0'
   pod 'KeychainSwift', '~> 24.0'
-
+  pod 'SwiftEventBus'
 end

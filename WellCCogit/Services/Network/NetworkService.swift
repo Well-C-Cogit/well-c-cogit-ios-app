@@ -9,12 +9,15 @@ import Alamofire
 import RxSwift
 import KeychainSwift
 
-public class NetworkServiceRx: NetworkService { }
-
-public class NetworkService {
-    static let shared: NetworkService = NetworkService()
+public class NetworkService: NSObject {
+    static let shared = NetworkService()
     
-    private init() { }
+    private(set) var session: Session
+    
+    private override init() { 
+        let interceptor = AuthorizationInterceptor()
+        self.session = Session(interceptor: interceptor)
+    }
     
     private var headers: HTTPHeaders {
         return HTTPHeaders.init([
@@ -23,11 +26,21 @@ public class NetworkService {
         ])
     }
     
+    func sendGet(with url: String,
+                 parameters: Parameters? = nil,
+                 completion: @escaping ((AFDataResponse<Data>) -> Void)) {
+        session.request(url,
+                        method: .get,
+                        parameters: parameters,
+                        headers: headers)
+        .responseData(completionHandler: completion)
+    }
+    
     func sendGet<T: Decodable>(with url: String,
                                parameters: Parameters? = nil,
                                header: HTTPHeaders? = nil,
                                completion: @escaping (Result<T, Error>) -> Void) {
-        AF.request(url, 
+        session.request(url,
                    method: .get,
                    parameters: parameters, 
                    headers: headers)
@@ -41,23 +54,35 @@ public class NetworkService {
             }
     }
     
+    func sendPost(with url: String,
+                 parameters: Parameters? = nil,
+                 completion: @escaping ((AFDataResponse<Data>) -> Void)) {
+        session.request(url,
+                        method: .post,
+                        parameters: parameters,
+                        encoding: JSONEncoding.default,
+                        headers: headers)
+        .validate()
+        .responseData(completionHandler: completion)
+    }
+    
     func sendPost<T: Decodable>(with url: String,
                                 parameters: Parameters?,
                                 header: HTTPHeaders? = nil,
                                 completion: @escaping (Result<T, Error>) -> Void) {
-           AF.request(url,
-                      method: .post,
-                      parameters: parameters,
-                      encoding: JSONEncoding.default,
-                      headers: headers)
-               .validate()
-               .responseDecodable(of: T.self) { response in
-                   switch response.result {
-                   case .success(let data):
-                       completion(.success(data))
-                   case .failure(let error):
-                       completion(.failure(error))
-                   }
-               }
-       }
+        session.request(url,
+                        method: .post,
+                        parameters: parameters,
+                        encoding: JSONEncoding.default,
+                        headers: headers)
+        .validate()
+        .responseDecodable(of: T.self) { response in
+            switch response.result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

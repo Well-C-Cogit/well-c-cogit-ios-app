@@ -31,6 +31,12 @@ extension ViewModelBindable where Self: UIViewController {
         self.viewModel = viewModel
 
         bindViewModel()
+        
+        if let vm = self.viewModel as? (any InputOutputAttachable),
+           let input = vm.input as? any DefaultInput,
+           shouldFetchData == true {
+            input.fetchData.accept(())
+        }
     }
 }
 

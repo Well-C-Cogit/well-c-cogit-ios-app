@@ -25,6 +25,21 @@ final class SignInViewController: BaseViewController,
         return button
     }()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        WellCCogitEventBus.onMainThread(self, type: [.retrieveGitHubAuthCode()]) { [weak self] notification in
+            guard let self,
+                  let notification,
+                  let event = notification.object as? WellCCogitEventType else { return }
+            
+            switch event {
+            case .retrieveGitHubAuthCode(let code):
+                print("SignIn VC retrieveGitHubAuthCode - \(code)")
+            case .none: return
+            }
+        }
+    }
     
     override func configureUI() {
         view.backgroundColor = .white

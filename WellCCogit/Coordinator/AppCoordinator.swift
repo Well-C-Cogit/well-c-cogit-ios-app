@@ -31,6 +31,7 @@ final class AppCoordinator: ReactiveCoordinator<Void>,
         self.splashCoordinator = self.coordinateToSplash()
             .asObservable()
             .subscribe(onNext: { [weak self] result in
+                print("result - \(result)")
                 self?.handleSplashResult(result: result)
             })
     }

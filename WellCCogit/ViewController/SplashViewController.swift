@@ -30,7 +30,7 @@ final class SplashViewController: BaseViewController,
         super.viewDidLoad()
      
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.viewModel.input.fetchData.accept(())
+            self.viewModel.input.transitionToNextScene.accept(())
         }
     }
     
@@ -45,12 +45,12 @@ final class SplashViewController: BaseViewController,
     }
     
     func bindViewModel() {
-        self.viewModel.input.fetchData
-            .bind(to: self.viewModel.coordinate.goSignIn)
+
+        viewModel.output.user
+            .bind { _ in
+                
+            }
             .disposed(by: disposeBag)
-        
-        LoginManager.shared.getUser()
-//        LoginManager.shared.getRepos()
     }
 }
 

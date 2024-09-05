@@ -32,18 +32,18 @@ final class SignInViewModel: ViewModelType {
    
     var disposeBag: DisposeBag = DisposeBag()
     
+    var usecase: OAuthUsecase
+    
+    init(usecase: OAuthUsecase) {
+        self.usecase = usecase
+    }
+    
     func transform(_ input: Input) -> Output {
         let signInResult = PublishRelay<Void>()
         
         input.didTapSignInButton
-            .bind { _ in
-                LoginManager.shared.requestCode()
-            }
-            .disposed(by: disposeBag)
-        
-        signInResult
-            .bind { _ in
-//                LoginManager.shared.requestCode()
+            .bind { [weak self] in
+                self?.usecase.requestCode()
             }
             .disposed(by: disposeBag)
         
