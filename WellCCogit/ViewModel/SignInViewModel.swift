@@ -52,8 +52,10 @@ final class SignInViewModel: ViewModelType {
         input.requestAccessToken
             .withUnretained(self)
             .flatMap { (self, code) in self.usecase.requestAccessToken(with: code )}
-            .bind { accessToken in
-                print("AcceesToken - \(accessToken)")
+            .bind { [weak self] accessToken in
+                if let accessToken {
+                    self?.coordinate.goHome.accept(())
+                }
             }
             .disposed(by: disposeBag)
             

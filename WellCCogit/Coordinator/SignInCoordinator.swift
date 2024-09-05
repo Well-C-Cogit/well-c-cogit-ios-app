@@ -22,16 +22,27 @@ final class SignInCoordinator: ReactiveCoordinator<SignInCoordinatorResult>,
         let viewModel = SignInViewModel(usecase: usecase)
         let viewController = SignInViewController(viewModel: viewModel)
         
-        let goHome = viewModel.coordinate.goHome.map { SignInCoordinatorResult.goHome }
+        viewModel.coordinate.goHome.share()
+            .flatMap { [unowned self] in self.coordinateToHome() }
+            .subscribe(onNext: { })
+            .disposed(by: disposeBag)
         
+        let goHome = viewModel.coordinate.goHome.map { SignInCoordinatorResult.goHome }
+       
         self.transition(to: viewController,
                         navigationController: navigationController,
                         type: .push, animated: false)
         
         return Observable.merge(goHome)
-            .take(1)
             .do(onNext: { [weak self] _ in
-                self?.targetPop(viewController)
+                self?.targetPop(viewController, afterDelay: 0.1)
             })
+    }
+}
+
+extension SignInCoordinator {
+    func coordinateToHome() -> Observable<Void> {
+        let coordinator = HomeCoordinator(navigationController: navigationController)
+        return self.coordinate(to: coordinator, type: .push, animated: false)
     }
 }

@@ -54,11 +54,10 @@ final class SplashViewModel: ViewModelType {
             .withUnretained(self)
             .bind { (self, user) in
                 if let user {
-                    print("Logged in - \(user.name)")
                     self.coordinate.goHome.accept(())
+                } else {
+                    self.coordinate.goSignIn.accept(())
                 }
-                
-                self.coordinate.goSignIn.accept(())
             }
             .disposed(by: disposeBag)
         
