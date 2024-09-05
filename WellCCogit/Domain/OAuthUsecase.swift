@@ -18,8 +18,8 @@ struct OAuthUsecase {
         repository.requestCode()
     }
     
-    func requestAccessToken(with code: String) {
-        repository.requestAccessToken(with: code)
+    func requestAccessToken(with code: String) -> Observable<OAuthTokenResponse?> {
+        return repository.requestAccessToken(with: code)
     }
     
     func getUser() -> Observable<User?>  {

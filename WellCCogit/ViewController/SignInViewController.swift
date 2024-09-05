@@ -35,7 +35,8 @@ final class SignInViewController: BaseViewController,
             
             switch event {
             case .retrieveGitHubAuthCode(let code):
-                print("SignIn VC retrieveGitHubAuthCode - \(code)")
+                if let code { viewModel.input.requestAccessToken.accept(code) }
+                
             case .none: return
             }
         }

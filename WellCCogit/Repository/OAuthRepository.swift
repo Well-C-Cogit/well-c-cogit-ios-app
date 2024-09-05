@@ -17,7 +17,7 @@ protocol OAuthRepositoryType {
     var apiPath: String { get }
     
     func requestCode()
-    func requestAccessToken(with code: String) -> Observable<String?>
+    func requestAccessToken(with code: String) -> Observable<OAuthTokenResponse?>
     func getUser() -> Observable<User?>
     
     func logout()
@@ -48,33 +48,19 @@ struct GithubOAuthRepository: GithubRepositoryType {
         }
     }
     
-    func requestAccessToken(with code: String) -> Observable<String?> {
+    func requestAccessToken(with code: String) -> Observable<OAuthTokenResponse?> {
+        
+        let url = domain + Const.Github.EndPoint.requestAccessToken
+        
         let parameters = ["client_id": Const.Github.clientId,
                           "client_secret": Const.Github.clientSecret,
                           "code": code]
-        
-        let url = domain + Const.Github.EndPoint.requestAccessToken
-    
-        NetworkService.shared.rx.sendPost(with: url, parameters: parameters)
-            .bind { data in
-                print("data - \(data)")
+       
+        return NetworkService.shared.rx.sendPost(with: url, parameters: parameters)
+            .do { token in
+                guard let token else { return }
+                KeychainSwift().set(token.accessToken, forKey: Const.Key.accessToken)
             }
-            
-        return .just("a")
-        
-//        AF.request(url,
-//                   method: .post,
-//                   parameters: parameters).responseJSON { (response) in
-//            switch response.result {
-//            case let .success(json):
-//                if let dic = json as? [String: String] {
-//                    let accessToken = dic["access_token"] ?? ""
-//                    KeychainSwift().set(accessToken, forKey: "accessToken")
-//                }
-//            case let .failure(error):
-//                print(error)
-//            }
-//        }
     }
     
     func getUser() -> Observable<User?> {

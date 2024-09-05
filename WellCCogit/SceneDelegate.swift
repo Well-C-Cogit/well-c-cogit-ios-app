@@ -23,7 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
             let code = url.absoluteString.components(separatedBy: "code=").last ?? ""
-            print("openURLContexts - \(code)")
             WellCCogitEventBus.postEvent(.retrieveGitHubAuthCode(code: code))
         }
     }

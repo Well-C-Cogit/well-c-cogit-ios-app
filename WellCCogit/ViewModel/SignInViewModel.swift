@@ -12,6 +12,7 @@ final class SignInViewModel: ViewModelType {
     
     struct Input {
         var didTapSignInButton: PublishRelay<Void>
+        var requestAccessToken: PublishRelay<String>
     }
     
     struct Output {
@@ -23,7 +24,8 @@ final class SignInViewModel: ViewModelType {
         var goHome: PublishRelay<Void>
     }
     
-    var input: Input = Input(didTapSignInButton: PublishRelay<Void>())
+    var input: Input = Input(didTapSignInButton: PublishRelay<Void>(),
+                             requestAccessToken: PublishRelay<String>())
     
     lazy var output: Output = transform(input)
     
@@ -46,6 +48,15 @@ final class SignInViewModel: ViewModelType {
                 self?.usecase.requestCode()
             }
             .disposed(by: disposeBag)
+        
+        input.requestAccessToken
+            .withUnretained(self)
+            .flatMap { (self, code) in self.usecase.requestAccessToken(with: code )}
+            .bind { accessToken in
+                print("AcceesToken - \(accessToken)")
+            }
+            .disposed(by: disposeBag)
+            
         
         return Output(signInResult: signInResult)
     }
