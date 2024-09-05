@@ -26,6 +26,9 @@
 		128A36DE2C89CD4E00580579 /* WellCCogitEventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36DD2C89CD4E00580579 /* WellCCogitEventBus.swift */; };
 		128A36E12C89CF5C00580579 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36E02C89CF5C00580579 /* EventBus.swift */; };
 		128A36E52C89D3F600580579 /* OAuthTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36E42C89D3F600580579 /* OAuthTokenResponse.swift */; };
+		128A36E72C89D93800580579 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36E62C89D93800580579 /* HomeViewController.swift */; };
+		128A36E92C89D97C00580579 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36E82C89D97C00580579 /* HomeCoordinator.swift */; };
+		128A36EB2C89D9B200580579 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36EA2C89D9B200580579 /* HomeViewModel.swift */; };
 		12E912B22C886AA200F3D41C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912B12C886AA200F3D41C /* AppDelegate.swift */; };
 		12E912B42C886AA200F3D41C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912B32C886AA200F3D41C /* SceneDelegate.swift */; };
 		12E912B92C886AA200F3D41C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 12E912B82C886AA200F3D41C /* Base */; };
@@ -63,6 +66,9 @@
 		128A36DD2C89CD4E00580579 /* WellCCogitEventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellCCogitEventBus.swift; sourceTree = "<group>"; };
 		128A36E02C89CF5C00580579 /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
 		128A36E42C89D3F600580579 /* OAuthTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthTokenResponse.swift; sourceTree = "<group>"; };
+		128A36E62C89D93800580579 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		128A36E82C89D97C00580579 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		128A36EA2C89D9B200580579 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		12E912AE2C886AA200F3D41C /* WellCCogit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellCCogit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E912B12C886AA200F3D41C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12E912B32C886AA200F3D41C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,11 +197,11 @@
 				128A36CE2C88A3ED00580579 /* Services */,
 				12E912D42C886D0A00F3D41C /* Domain */,
 				12E912D52C886D1200F3D41C /* Repository */,
-				12E912D32C886D0000F3D41C /* Coordinator */,
 				128A36CB2C889F5C00580579 /* Model */,
-				12E912D12C886CF000F3D41C /* ViewModel */,
 				12E912D02C886CEC00F3D41C /* View */,
+				12E912D12C886CF000F3D41C /* ViewModel */,
 				12E912D22C886CF500F3D41C /* ViewController */,
+				12E912D32C886D0000F3D41C /* Coordinator */,
 				12E912B12C886AA200F3D41C /* AppDelegate.swift */,
 				12E912B32C886AA200F3D41C /* SceneDelegate.swift */,
 				12E912B72C886AA200F3D41C /* Main.storyboard */,
@@ -219,6 +225,7 @@
 				12E912D72C886DCF00F3D41C /* Base */,
 				128A36B12C8877E200580579 /* SplashViewModel.swift */,
 				128A36C22C887C9D00580579 /* SignInViewModel.swift */,
+				128A36EA2C89D9B200580579 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 				128A36B52C88781100580579 /* Base */,
 				128A36B32C8877FA00580579 /* SplashViewController.swift */,
 				128A36C02C887C7400580579 /* SignInViewController.swift */,
+				128A36E62C89D93800580579 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 				12E912F82C88708900F3D41C /* AppCoordinator.swift */,
 				128A36AF2C8877C800580579 /* SplashCoordinator.swift */,
 				128A36C42C887CBB00580579 /* SignInCoordinator.swift */,
+				128A36E82C89D97C00580579 /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -424,7 +433,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				128A36BF2C8878DA00580579 /* OAuthUsecase.swift in Sources */,
+				128A36EB2C89D9B200580579 /* HomeViewModel.swift in Sources */,
 				128A36D82C88B04D00580579 /* AuthInterceptor.swift in Sources */,
+				128A36E72C89D93800580579 /* HomeViewController.swift in Sources */,
 				12E912D92C886DDA00F3D41C /* ViewModelType.swift in Sources */,
 				128A36B02C8877C800580579 /* SplashCoordinator.swift in Sources */,
 				128A36CD2C889F6600580579 /* User.swift in Sources */,
@@ -451,6 +462,7 @@
 				128A36C52C887CBB00580579 /* SignInCoordinator.swift in Sources */,
 				128A36BD2C8878AF00580579 /* OAuthRepository.swift in Sources */,
 				12E912FD2C8870BD00F3D41C /* CoordinatorForwardable.swift in Sources */,
+				128A36E92C89D97C00580579 /* HomeCoordinator.swift in Sources */,
 				128A36D32C88A40F00580579 /* NetworkService.swift in Sources */,
 				12E912F02C886ECC00F3D41C /* InputOutputAttachable.swift in Sources */,
 			);

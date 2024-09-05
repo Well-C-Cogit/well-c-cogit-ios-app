@@ -50,7 +50,8 @@ private extension AppCoordinator {
     }
     
     func coordinateToHome() -> Observable<Void> {
-        return .just(())
+        let coordinator = HomeCoordinator(navigationController: navigationController)
+        return self.coordinate(to: coordinator, type: .push, animated: false)
     }
 }
 
