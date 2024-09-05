@@ -20,10 +20,13 @@ final class HomeViewController: BaseViewController,
     var disposeBag: DisposeBag = DisposeBag()
     
     override func configureUI() {
-        view.backgroundColor = .blue
+        configureNavigationBarType(.main)
+        view.backgroundColor = .gray
     }
     
     func bindViewModel() {
         
     }
 }
+
+extension HomeViewController: NavigationConfigurable { }

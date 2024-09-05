@@ -54,8 +54,10 @@ final class SplashViewModel: ViewModelType {
             .withUnretained(self)
             .bind { (self, user) in
                 if let user {
+                    print("자동 로그인 - \(user)")
                     self.coordinate.goHome.accept(())
                 } else {
+                    print("로그인 필요")
                     self.coordinate.goSignIn.accept(())
                 }
             }

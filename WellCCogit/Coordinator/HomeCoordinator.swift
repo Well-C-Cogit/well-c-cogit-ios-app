@@ -10,10 +10,14 @@ import RxSwift
 final class HomeCoordinator: ReactiveCoordinator<Void>,
                              CoordinatorTransitable {
     
+    override init(navigationController: UINavigationController) {
+        super.init(navigationController: navigationController)
+        AppCoordinator.shared.window.rootViewController = navigationController
+    }
+    
     override func start(_ type: CoordinatorTransitionType) -> Observable<ReactiveCoordinator<Void>.CoordinatorResultType> {
-        
+    
         let viewModel = HomeViewModel()
-        
         let viewController = HomeViewController(viewModel: viewModel)
         
         self.transition(to: viewController,
