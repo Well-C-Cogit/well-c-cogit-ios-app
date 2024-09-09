@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol ModelAdaptable {
+    var identifier: String { get set }
+    var model: Decodable { get set }
+}

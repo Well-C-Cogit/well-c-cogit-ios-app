@@ -17,7 +17,9 @@ final class HomeCoordinator: ReactiveCoordinator<Void>,
     
     override func start(_ type: CoordinatorTransitionType) -> Observable<ReactiveCoordinator<Void>.CoordinatorResultType> {
     
-        let viewModel = HomeViewModel()
+        let repository = HomeRepositoryTest()
+        let usecase = HomeUsecase(repository: repository)
+        let viewModel = HomeViewModel(usecase: usecase)
         let viewController = HomeViewController(viewModel: viewModel)
         
         self.transition(to: viewController,

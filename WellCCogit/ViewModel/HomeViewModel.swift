@@ -8,6 +8,11 @@
 import RxSwift
 import RxRelay
 
+struct HomeResponse: Decodable {
+    var bestCommunity: CommunityModel
+    var otherCommunities: [CommunityModel]
+}
+
 final class HomeViewModel: ViewModelType {
     
     struct Input: DefaultInput {
@@ -15,7 +20,9 @@ final class HomeViewModel: ViewModelType {
     }
     
     struct Output {
-        
+        var items: PublishRelay<[[WellCCogitCellModel]]>
+        var bestCommunity: PublishRelay<CommunityModel>
+        var otherCommunities: PublishRelay<[CommunityModel]>
     }
     
     struct Coordinate: DefaultCoordinate {
@@ -28,8 +35,36 @@ final class HomeViewModel: ViewModelType {
     
     var disposeBag: DisposeBag = DisposeBag()
     
+    let useacse: HomeUsecase
+    
+    init(usecase: HomeUsecase) {
+        self.useacse = usecase
+    }
+    
     func transform(_ input: Input) -> Output {
+        var items = PublishRelay<[[WellCCogitCellModel]]>()
+        var bestCommunity = PublishRelay<CommunityModel>()
+        var otherCommunities = PublishRelay<[CommunityModel]>()
         
-        return Output()
+        input.fetchData
+            .withUnretained(self)
+            .flatMap { (self, _) in self.useacse.fetchData() }
+            .bind { response in
+                
+                var cellModel = [[WellCCogitCellModel]]()
+                
+                cellModel.append([response.bestCommunity.toCellModel()])
+                cellModel.append(response.otherCommunities.map { $0.toCellModel() })
+                
+                items.accept(cellModel)
+                
+                bestCommunity.accept(response.bestCommunity)
+                otherCommunities.accept(response.otherCommunities)
+            }
+            .disposed(by: disposeBag)
+        
+        return Output(items: items,
+                      bestCommunity: bestCommunity,
+                      otherCommunities: otherCommunities)
     }
 }
