@@ -21,8 +21,6 @@ final class HomeViewModel: ViewModelType {
     
     struct Output {
         var items: PublishRelay<[[WellCCogitCellModel]]>
-        var bestCommunity: PublishRelay<CommunityModel>
-        var otherCommunities: PublishRelay<[CommunityModel]>
     }
     
     struct Coordinate: DefaultCoordinate {
@@ -43,9 +41,7 @@ final class HomeViewModel: ViewModelType {
     
     func transform(_ input: Input) -> Output {
         var items = PublishRelay<[[WellCCogitCellModel]]>()
-        var bestCommunity = PublishRelay<CommunityModel>()
-        var otherCommunities = PublishRelay<[CommunityModel]>()
-        
+       
         input.fetchData
             .withUnretained(self)
             .flatMap { (self, _) in self.useacse.fetchData() }
@@ -57,14 +53,9 @@ final class HomeViewModel: ViewModelType {
                 cellModel.append(response.otherCommunities.map { $0.toCellModel() })
                 
                 items.accept(cellModel)
-                
-                bestCommunity.accept(response.bestCommunity)
-                otherCommunities.accept(response.otherCommunities)
             }
             .disposed(by: disposeBag)
         
-        return Output(items: items,
-                      bestCommunity: bestCommunity,
-                      otherCommunities: otherCommunities)
+        return Output(items: items)
     }
 }

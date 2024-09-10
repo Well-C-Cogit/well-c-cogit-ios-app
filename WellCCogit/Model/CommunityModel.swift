@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CommunityModel {
+struct CommunityModel: Decodable {
     var progileImage: String?
     var name: String
     var location: String

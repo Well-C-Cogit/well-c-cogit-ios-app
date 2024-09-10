@@ -16,18 +16,17 @@ class BaseCell<Model: Decodable>: UICollectionViewCell {
     func update(model: Model) { }
     
     func didSelect(model: Model, indexPath: IndexPath) { }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
-
 class CommunityCell: BaseCell<CommunityModel>, ConfigurableUI {
-   
-   var baseView: CommunityCellContentView = CommunityCellContentView()
+    var baseView: CommunityCellContentView = CommunityCellContentView()
     
-    func configureUI() {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         configureBaseView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
