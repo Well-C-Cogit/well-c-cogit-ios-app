@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct CommunityModel: Decodable {
+struct CommunityModel: Decodable, Hashable {
+    static func == (lhs: CommunityModel, rhs: CommunityModel) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
     var progileImage: String?
     var name: String
     var location: String

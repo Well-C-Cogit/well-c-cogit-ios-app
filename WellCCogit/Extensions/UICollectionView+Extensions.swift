@@ -12,6 +12,10 @@ extension UICollectionView {
         register(T.self, forCellWithReuseIdentifier: String(describing: name))
     }
     
+    public func register<T: UICollectionReusableView>(supplementaryViewOfKind kind: String, withClass name: T.Type) {
+        register(T.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: String(describing: name))
+    }
+    
     public func dequeueReusableCell<T: UICollectionViewCell>(withClass name: T.Type, for indexPath: IndexPath) -> T {
         guard let cell = self.dequeueReusableCell(withReuseIdentifier: String(describing: name), for: indexPath) as? T else { fatalError("Couldn't find UICollectionViewCell for \(String(describing: name)), make sure the cell is registered with collection view")
         }

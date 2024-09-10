@@ -32,6 +32,22 @@
 		128A36EF2C8A145500580579 /* NavigationConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36EE2C8A145500580579 /* NavigationConfigurable.swift */; };
 		128A36F12C8A175A00580579 /* WellCCogitNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36F02C8A175A00580579 /* WellCCogitNavigationController.swift */; };
 		128A36F32C8A1F0500580579 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A36F22C8A1F0500580579 /* UIImage+Extensions.swift */; };
+		129C61CE2C8DE2A500ED20E9 /* CollectionViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61CD2C8DE2A500ED20E9 /* CollectionViewHandler.swift */; };
+		129C61D02C8F046800ED20E9 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61CF2C8F046800ED20E9 /* UICollectionView+Extensions.swift */; };
+		129C61D22C8F071400ED20E9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61D12C8F071400ED20E9 /* String+Extensions.swift */; };
+		129C61D52C8F07FA00ED20E9 /* WellCCogitCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61D42C8F07FA00ED20E9 /* WellCCogitCellModel.swift */; };
+		129C61D82C8F0FC900ED20E9 /* CommunityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61D72C8F0FC900ED20E9 /* CommunityCell.swift */; };
+		129C61DA2C8F1F8600ED20E9 /* CommunityCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61D92C8F1F8600ED20E9 /* CommunityCellContentView.swift */; };
+		129C61DD2C8F208600ED20E9 /* ConfigurableUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61DC2C8F208600ED20E9 /* ConfigurableUI.swift */; };
+		129C61DF2C8F209900ED20E9 /* ModelAdaptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61DE2C8F209900ED20E9 /* ModelAdaptable.swift */; };
+		129C61E12C8F223000ED20E9 /* ActionAttachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61E02C8F223000ED20E9 /* ActionAttachable.swift */; };
+		129C61E32C8F376A00ED20E9 /* CommunityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61E22C8F376A00ED20E9 /* CommunityModel.swift */; };
+		129C61E52C8F377C00ED20E9 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61E42C8F377C00ED20E9 /* Member.swift */; };
+		129C61E92C8F3EA900ED20E9 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61E82C8F3EA900ED20E9 /* HomeRepository.swift */; };
+		129C61EB2C8F3EB200ED20E9 /* HomeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61EA2C8F3EB200ED20E9 /* HomeUsecase.swift */; };
+		129C61ED2C8F436F00ED20E9 /* CellModelConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61EC2C8F436F00ED20E9 /* CellModelConvertible.swift */; };
+		129C61F02C9085F400ED20E9 /* TitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61EF2C9085F400ED20E9 /* TitleHeader.swift */; };
+		129C61F22C90958B00ED20E9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C61F12C90958B00ED20E9 /* UIColor+Extensions.swift */; };
 		12E912B22C886AA200F3D41C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912B12C886AA200F3D41C /* AppDelegate.swift */; };
 		12E912B42C886AA200F3D41C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E912B32C886AA200F3D41C /* SceneDelegate.swift */; };
 		12E912B92C886AA200F3D41C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 12E912B82C886AA200F3D41C /* Base */; };
@@ -75,6 +91,22 @@
 		128A36EE2C8A145500580579 /* NavigationConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurable.swift; sourceTree = "<group>"; };
 		128A36F02C8A175A00580579 /* WellCCogitNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellCCogitNavigationController.swift; sourceTree = "<group>"; };
 		128A36F22C8A1F0500580579 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		129C61CD2C8DE2A500ED20E9 /* CollectionViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHandler.swift; sourceTree = "<group>"; };
+		129C61CF2C8F046800ED20E9 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		129C61D12C8F071400ED20E9 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		129C61D42C8F07FA00ED20E9 /* WellCCogitCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellCCogitCellModel.swift; sourceTree = "<group>"; };
+		129C61D72C8F0FC900ED20E9 /* CommunityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCell.swift; sourceTree = "<group>"; };
+		129C61D92C8F1F8600ED20E9 /* CommunityCellContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCellContentView.swift; sourceTree = "<group>"; };
+		129C61DC2C8F208600ED20E9 /* ConfigurableUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableUI.swift; sourceTree = "<group>"; };
+		129C61DE2C8F209900ED20E9 /* ModelAdaptable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAdaptable.swift; sourceTree = "<group>"; };
+		129C61E02C8F223000ED20E9 /* ActionAttachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAttachable.swift; sourceTree = "<group>"; };
+		129C61E22C8F376A00ED20E9 /* CommunityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityModel.swift; sourceTree = "<group>"; };
+		129C61E42C8F377C00ED20E9 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		129C61E82C8F3EA900ED20E9 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		129C61EA2C8F3EB200ED20E9 /* HomeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUsecase.swift; sourceTree = "<group>"; };
+		129C61EC2C8F436F00ED20E9 /* CellModelConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModelConvertible.swift; sourceTree = "<group>"; };
+		129C61EF2C9085F400ED20E9 /* TitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeader.swift; sourceTree = "<group>"; };
+		129C61F12C90958B00ED20E9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		12E912AE2C886AA200F3D41C /* WellCCogit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellCCogit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E912B12C886AA200F3D41C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12E912B32C886AA200F3D41C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +154,8 @@
 			children = (
 				128A36CC2C889F6600580579 /* User.swift */,
 				128A36E42C89D3F600580579 /* OAuthTokenResponse.swift */,
+				129C61E22C8F376A00ED20E9 /* CommunityModel.swift */,
+				129C61E42C8F377C00ED20E9 /* Member.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +199,9 @@
 			children = (
 				128A36D52C88A6C400580579 /* NetworkService+Rx.swift */,
 				128A36F22C8A1F0500580579 /* UIImage+Extensions.swift */,
+				129C61CF2C8F046800ED20E9 /* UICollectionView+Extensions.swift */,
+				129C61D12C8F071400ED20E9 /* String+Extensions.swift */,
+				129C61F12C90958B00ED20E9 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,6 +222,43 @@
 				128A36F02C8A175A00580579 /* WellCCogitNavigationController.swift */,
 			);
 			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		129C61CB2C8DE29300ED20E9 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				129C61CD2C8DE2A500ED20E9 /* CollectionViewHandler.swift */,
+				129C61D42C8F07FA00ED20E9 /* WellCCogitCellModel.swift */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		129C61D62C8F0F9100ED20E9 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				129C61D72C8F0FC900ED20E9 /* CommunityCell.swift */,
+				129C61D92C8F1F8600ED20E9 /* CommunityCellContentView.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		129C61DB2C8F207500ED20E9 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				129C61DC2C8F208600ED20E9 /* ConfigurableUI.swift */,
+				129C61DE2C8F209900ED20E9 /* ModelAdaptable.swift */,
+				129C61E02C8F223000ED20E9 /* ActionAttachable.swift */,
+				129C61EC2C8F436F00ED20E9 /* CellModelConvertible.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		129C61EE2C9085E300ED20E9 /* CollectionReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				129C61EF2C9085F400ED20E9 /* TitleHeader.swift */,
+			);
+			path = CollectionReusableView;
 			sourceTree = "<group>";
 		};
 		12E912A52C886AA200F3D41C = {
@@ -208,6 +282,7 @@
 		12E912B02C886AA200F3D41C /* WellCCogit */ = {
 			isa = PBXGroup;
 			children = (
+				129C61DB2C8F207500ED20E9 /* Protocol */,
 				12E912D62C886D1A00F3D41C /* Common */,
 				128A36D42C88A6B800580579 /* Extensions */,
 				128A36CE2C88A3ED00580579 /* Services */,
@@ -231,6 +306,8 @@
 		12E912D02C886CEC00F3D41C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				129C61EE2C9085E300ED20E9 /* CollectionReusableView */,
+				129C61D62C8F0F9100ED20E9 /* CollectionViewCell */,
 				128A36ED2C8A143500580579 /* NavigationController */,
 			);
 			path = View;
@@ -274,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				128A36BE2C8878DA00580579 /* OAuthUsecase.swift */,
+				129C61EA2C8F3EB200ED20E9 /* HomeUsecase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -283,6 +361,7 @@
 			children = (
 				128A36BA2C8878A000580579 /* RepositoryType.swift */,
 				128A36BC2C8878AF00580579 /* OAuthRepository.swift */,
+				129C61E82C8F3EA900ED20E9 /* HomeRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -290,6 +369,7 @@
 		12E912D62C886D1A00F3D41C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				129C61CB2C8DE29300ED20E9 /* Handler */,
 				128A36D92C88C21500580579 /* Constants.swift */,
 			);
 			path = Common;
@@ -449,26 +529,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				129C61D02C8F046800ED20E9 /* UICollectionView+Extensions.swift in Sources */,
+				129C61D22C8F071400ED20E9 /* String+Extensions.swift in Sources */,
+				129C61D52C8F07FA00ED20E9 /* WellCCogitCellModel.swift in Sources */,
+				129C61F22C90958B00ED20E9 /* UIColor+Extensions.swift in Sources */,
 				128A36BF2C8878DA00580579 /* OAuthUsecase.swift in Sources */,
 				128A36EB2C89D9B200580579 /* HomeViewModel.swift in Sources */,
+				129C61ED2C8F436F00ED20E9 /* CellModelConvertible.swift in Sources */,
 				128A36D82C88B04D00580579 /* AuthInterceptor.swift in Sources */,
 				128A36E72C89D93800580579 /* HomeViewController.swift in Sources */,
 				12E912D92C886DDA00F3D41C /* ViewModelType.swift in Sources */,
 				128A36F12C8A175A00580579 /* WellCCogitNavigationController.swift in Sources */,
 				128A36B02C8877C800580579 /* SplashCoordinator.swift in Sources */,
+				129C61DA2C8F1F8600ED20E9 /* CommunityCellContentView.swift in Sources */,
 				128A36EF2C8A145500580579 /* NavigationConfigurable.swift in Sources */,
 				128A36CD2C889F6600580579 /* User.swift in Sources */,
+				129C61EB2C8F3EB200ED20E9 /* HomeUsecase.swift in Sources */,
 				128A36DA2C88C21500580579 /* Constants.swift in Sources */,
 				128A36B22C8877E200580579 /* SplashViewModel.swift in Sources */,
 				12E912FB2C88709F00F3D41C /* ReactiveCoordinator.swift in Sources */,
 				12E912B22C886AA200F3D41C /* AppDelegate.swift in Sources */,
 				128A36B42C8877FA00580579 /* SplashViewController.swift in Sources */,
 				12E913012C88716300F3D41C /* CoordinatorTransitable.swift in Sources */,
+				129C61E52C8F377C00ED20E9 /* Member.swift in Sources */,
+				129C61CE2C8DE2A500ED20E9 /* CollectionViewHandler.swift in Sources */,
 				128A36F32C8A1F0500580579 /* UIImage+Extensions.swift in Sources */,
 				12E912B42C886AA200F3D41C /* SceneDelegate.swift in Sources */,
 				128A36BB2C8878A000580579 /* RepositoryType.swift in Sources */,
 				12E912F92C88708900F3D41C /* AppCoordinator.swift in Sources */,
 				128A36B72C88781A00580579 /* ViewModelBindable.swift in Sources */,
+				129C61D82C8F0FC900ED20E9 /* CommunityCell.swift in Sources */,
 				128A36D62C88A6C400580579 /* NetworkService+Rx.swift in Sources */,
 				128A36E52C89D3F600580579 /* OAuthTokenResponse.swift in Sources */,
 				128A36C12C887C7400580579 /* SignInViewController.swift in Sources */,
@@ -482,8 +572,14 @@
 				128A36C52C887CBB00580579 /* SignInCoordinator.swift in Sources */,
 				128A36BD2C8878AF00580579 /* OAuthRepository.swift in Sources */,
 				12E912FD2C8870BD00F3D41C /* CoordinatorForwardable.swift in Sources */,
+				129C61E92C8F3EA900ED20E9 /* HomeRepository.swift in Sources */,
 				128A36E92C89D97C00580579 /* HomeCoordinator.swift in Sources */,
+				129C61DD2C8F208600ED20E9 /* ConfigurableUI.swift in Sources */,
 				128A36D32C88A40F00580579 /* NetworkService.swift in Sources */,
+				129C61E12C8F223000ED20E9 /* ActionAttachable.swift in Sources */,
+				129C61E32C8F376A00ED20E9 /* CommunityModel.swift in Sources */,
+				129C61DF2C8F209900ED20E9 /* ModelAdaptable.swift in Sources */,
+				129C61F02C9085F400ED20E9 /* TitleHeader.swift in Sources */,
 				12E912F02C886ECC00F3D41C /* InputOutputAttachable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

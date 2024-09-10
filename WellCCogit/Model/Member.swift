@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Member: Decodable {
+struct Member: Decodable, Hashable {
     var profileImage: String?
     var userId: String
 }
