@@ -8,14 +8,14 @@
 import UIKit
 
 protocol CellModelConvertible: Decodable {
-    associatedtype cellClassType: UICollectionViewCell
+    associatedtype classType: UICollectionViewCell
     
     func toCellModel() -> WellCCogitCellModel
 }
 
 extension CellModelConvertible {
     func toCellModel() -> WellCCogitCellModel {
-        return WellCCogitCellModel(identifier: String(describing: cellClassType.self),
+        return WellCCogitCellModel(identifier: String(describing: classType.self),
                                    model: self)
     }
 }

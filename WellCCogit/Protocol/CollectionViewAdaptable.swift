@@ -44,9 +44,17 @@ extension CollectionViewAdaptable {
     func getReusableView(viewForSupplementaryElementOfKind kind: String,
                          _ indexPath: IndexPath) -> UICollectionReusableView {
         
-        guard let identifier = getSectionIdentifier(indexPath.section) else { return UICollectionReusableView() }
+        guard let section = getSection(indexPath.section) else { return UICollectionReusableView() }
         
-        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: indexPath)
+        let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: section.identifier, for: indexPath)
+        
+        if let adaptableView = reusableView as? ReusableViewAdaptable {
+            adaptableView.adaptOnBind(model: section.model, sectionIndex: indexPath.section)
+            
+            adaptableView.adaptOnUpdate()
+        }
+        
+        return reusableView
     }
     
     func didSelectCell(_ indexPath: IndexPath) {

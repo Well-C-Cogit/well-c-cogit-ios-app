@@ -18,7 +18,7 @@ protocol OAuthRepositoryType {
     
     func requestCode()
     func requestAccessToken(with code: String) -> Observable<OAuthTokenResponse?>
-    func getUser() -> Observable<User?>
+    func getUser() -> Observable<GithubUser?>
     
     func logout()
 }
@@ -63,7 +63,7 @@ struct GithubOAuthRepository: GithubRepositoryType {
             }
     }
     
-    func getUser() -> Observable<User?> {
+    func getUser() -> Observable<GithubUser?> {
         let url = apiPath + Const.Github.EndPoint.getUser
         return NetworkService.shared.rx.sendGet(with: url)
     }

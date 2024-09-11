@@ -9,8 +9,7 @@ import UIKit
 
 protocol ListAdaptable: AnyObject {
     
-    typealias ListItem = (sectionIdentifier: String?,
-                          items: [ModelAdaptable])
+    typealias ListItem = (sectiom: ModelAdaptable?, items: [ModelAdaptable])
     
     var items: [ListItem]? { get }
     
@@ -38,7 +37,9 @@ extension ListAdaptable {
         return sectionItems[indexPath.row]
     }
     
-    func getSectionIdentifier(_ section: Int) -> String? {
-        return items?[section].sectionIdentifier
+    func getSection(_ section: Int) -> ModelAdaptable? {
+        guard let items else { return nil }
+        
+        return items[section].sectiom
     }
 }

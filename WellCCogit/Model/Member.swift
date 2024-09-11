@@ -22,5 +22,5 @@ struct MyCommunityModel: Decodable, Hashable {
 }
 
 extension MyCommunityModel: CellModelConvertible {
-    typealias cellClassType = MyCommunityCell
+    typealias classType = MyCommunityCell
 }

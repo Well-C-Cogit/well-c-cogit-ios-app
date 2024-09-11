@@ -15,6 +15,25 @@ struct HomeRepositoryTest: HomeRepositoryType {
     func fetchData() -> Observable<HomeResponse> {
         return Observable.just(
             HomeResponse(
+                user: MyCommunityModel(
+                    profileImage: "/images/example1.jpg",
+                    userId: "@Jisu0917",
+                    name: "박지수",
+                    myCommunities: [
+                        CommunityModel(progileImage: "/images/WSCG3.png",
+                                       name: "카페동네 알고리즘 스터디",
+                                       location: "관악구 신림동",
+                                       lastCommit: "4분전 활동",
+                                       activeMembers: 5,
+                                       totalCommit: 648,
+                                       daysActive: 88,
+                                       members: [
+                                        Member(userId: "Jisu0917"),
+                                        Member(userId: "Suzy94"),
+                                        Member(userId: "Dohyun911")
+                                       ])
+                    ]),
+                
                 bestCommunity: CommunityModel(
                     progileImage: "/images/WSCG3.png",
                     name: "카페동네 알고리즘 스터디",

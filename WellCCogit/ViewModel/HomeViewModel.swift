@@ -50,11 +50,13 @@ final class HomeViewModel: ViewModelType {
                 
                 var listItems = [ListAdaptable.ListItem]()
                 let headerIdentifier = String(describing: TitleHeader.self)
-                listItems.append((headerIdentifier, 
+                listItems.append((TitleSectionModel(title: "내 정보").toVieWModel(),
                                   [response.user.toCellModel()]))
-                listItems.append((headerIdentifier,
+                
+                listItems.append((TitleSectionModel(title: "오늘의 베스트 모임").toVieWModel(),
                                   [response.bestCommunity.toCellModel()]))
-                listItems.append((headerIdentifier,
+                
+                listItems.append((TitleSectionModel(title: "기타 커뮤니티").toVieWModel(),
                                   response.otherCommunities.map { $0.toCellModel() }))
                 
                 items.accept(listItems)
