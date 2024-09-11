@@ -9,6 +9,7 @@ import RxSwift
 import RxRelay
 
 struct HomeResponse: Decodable {
+    var user: MyCommunityModel
     var bestCommunity: CommunityModel
     var otherCommunities: [CommunityModel]
 }
@@ -20,7 +21,7 @@ final class HomeViewModel: ViewModelType {
     }
     
     struct Output {
-        var items: PublishRelay<[[WellCCogitCellModel]]>
+        var items: PublishRelay<[ListAdaptable.ListItem]>
     }
     
     struct Coordinate: DefaultCoordinate {
@@ -40,19 +41,23 @@ final class HomeViewModel: ViewModelType {
     }
     
     func transform(_ input: Input) -> Output {
-        var items = PublishRelay<[[WellCCogitCellModel]]>()
+        var items = PublishRelay<[ListAdaptable.ListItem]>()
        
         input.fetchData
             .withUnretained(self)
             .flatMap { (self, _) in self.useacse.fetchData() }
             .bind { response in
                 
-                var cellModel = [[WellCCogitCellModel]]()
+                var listItems = [ListAdaptable.ListItem]()
+                let headerIdentifier = String(describing: TitleHeader.self)
+                listItems.append((headerIdentifier, 
+                                  [response.user.toCellModel()]))
+                listItems.append((headerIdentifier,
+                                  [response.bestCommunity.toCellModel()]))
+                listItems.append((headerIdentifier,
+                                  response.otherCommunities.map { $0.toCellModel() }))
                 
-                cellModel.append([response.bestCommunity.toCellModel()])
-                cellModel.append(response.otherCommunities.map { $0.toCellModel() })
-                
-                items.accept(cellModel)
+                items.accept(listItems)
             }
             .disposed(by: disposeBag)
         

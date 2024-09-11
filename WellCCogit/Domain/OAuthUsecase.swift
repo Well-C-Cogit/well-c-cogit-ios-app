@@ -22,7 +22,7 @@ struct OAuthUsecase {
         return repository.requestAccessToken(with: code)
     }
     
-    func getUser() -> Observable<User?>  {
+    func getUser() -> Observable<GithubUser?>  {
         return repository.getUser()
     }
     

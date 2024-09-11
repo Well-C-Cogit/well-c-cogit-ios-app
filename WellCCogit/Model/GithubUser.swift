@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Codable {
+struct GithubUser: Codable {
     var url: String?
     var publicRepos: Int
     var totalPrivateRepos: Int?

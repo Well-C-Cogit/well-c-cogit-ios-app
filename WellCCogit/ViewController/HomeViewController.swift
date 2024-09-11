@@ -31,22 +31,42 @@ enum HomeSectionItem: Hashable {
 }
 
 final class HomeViewController: BaseViewController,
-                                ViewModelBindable {
+                                ViewModelBindable,
+                                CollectionViewProtocol {
     
     typealias ViewModelType = HomeViewModel
-    
     var viewModel: HomeViewModel!
     var disposeBag: DisposeBag = DisposeBag()
     
-    lazy var collectionView: UICollectionView = UICollectionView(frame: .zero,
+    lazy var handler: CollectionViewHandler! = CollectionViewHandler(adaptable: self)
+
+    var collectionView: UICollectionView! = UICollectionView(frame: .zero,
                                                                  collectionViewLayout: .init())
     
-    var items: [[WellCCogitCellModel]]?
-    
+    var items: [ListItem]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        protocolForCollectionView(collectionView)
         configureNavigationBarType(.main)
         configureCollectionView()
+    }
+
+    func decorateCell(_ cell: UICollectionViewCell, forItemAt indexPath: IndexPath) { }
+    
+    func bindViewModel() {
+        
+        viewModel.output.items
+            .asDriver(onErrorJustReturn: [])
+            .drive(onNext: { items in
+                guard !items.isEmpty else { return }
+                
+                self.items = items
+                
+                self.collectionView.reloadData()
+            
+            })
+            .disposed(by: disposeBag)
     }
     
     override func configureUI() {
@@ -59,15 +79,13 @@ final class HomeViewController: BaseViewController,
     
     func configureCollectionView() {
         collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.collectionViewLayout = createLayout()
-        
-        collectionView.dataSource = self
-        
+
+        collectionView.register(cellWithClass: MyCommunityCell.self)
         collectionView.register(cellWithClass: CommunityCell.self)
         collectionView.register(supplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withClass: TitleHeader.self)
-        
-       
     }
     
     func createLayout() -> UICollectionViewLayout {
@@ -75,82 +93,69 @@ final class HomeViewController: BaseViewController,
             
             guard let homeSection = HomeSection(rawValue: sectionIndex) else { return nil }
             
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                  heightDimension: .estimated(160))
-            
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = .zero
-
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                   heightDimension: .estimated(180))
-            
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
-                                                         repeatingSubitem: item,
-                                                         count: self.items?[sectionIndex].count ?? 0)
-            
-            let section = NSCollectionLayoutSection(group: group)
-            
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                    heightDimension: .estimated(32))
-            
-            let header = NSCollectionLayoutBoundarySupplementaryItem(
-                layoutSize: headerSize,
-                elementKind: UICollectionView.elementKindSectionHeader,
-                alignment: .top
-            )
-               
-            section.boundarySupplementaryItems = [header]
-            
-            return section
+            switch homeSection {
+            case .user:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .estimated(400))
+                
+                var item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                       heightDimension: .estimated(400))
+                
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
+                                                               subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                        heightDimension: .estimated(40))
+                
+                let header = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: headerSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                   
+                section.boundarySupplementaryItems = [header]
+                
+                return section
+                
+            default:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .estimated(160))
+                
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                       heightDimension: .estimated(160))
+                
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
+                                                             repeatingSubitem: item,
+                                                             count: self.items?[sectionIndex].items.count ?? 0)
+                
+                group.interItemSpacing = .fixed(16)
+       
+                let section = NSCollectionLayoutSection(group: group)
+                
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                        heightDimension: .estimated(40))
+                
+                let header = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: headerSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                   
+                section.boundarySupplementaryItems = [header]
+                
+                return section
+            }
         }
         
         return layout
-    }
-    
-   
-    func bindViewModel() {
-        
-        viewModel.output.items
-            .asDriver(onErrorJustReturn: [[]])
-            .drive(onNext: { cellModel in
-                guard !cellModel.isEmpty else { return }
-                self.items = cellModel
-                self.collectionView.reloadData()
-            
-            })
-            .disposed(by: disposeBag)
-    }
-}
-
-//MARKK: -
-extension HomeViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("🟢 Header count \(items?.count)")
-        return items?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items?[section].count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let classType = items?[indexPath.section][indexPath.item].identifier.getClassType() as? UICollectionViewCell.Type else {
-            return UICollectionViewCell()
-        }
-        
-        print("ClassType \(classType)")
-        
-        let cell = collectionView.dequeueReusableCell(withClass: classType.self, for: indexPath)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let section = HomeSection(rawValue: indexPath.section) else { return .init() }
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                     withClass: TitleHeader.self,
-                                                                     for: indexPath)
-        header.configure(title: section.title)
-        return header
     }
 }
 

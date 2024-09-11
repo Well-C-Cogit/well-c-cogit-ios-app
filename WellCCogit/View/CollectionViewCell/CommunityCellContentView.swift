@@ -8,7 +8,7 @@
 import UIKit
 
 final class CommunityCellContentView: UIView {
-    private var imageView: UIImageView = {
+    private(set) var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 20
         imageView.layer.borderColor = UIColor.black.cgColor
@@ -16,42 +16,40 @@ final class CommunityCellContentView: UIView {
         return imageView
     }()
     
-    private var titleLabel: UILabel = {
+    private(set) var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .semibold)
         label.text = "카페동네 알고리즘 스터디"
         return label
     }()
     
-    private var addressLabel: UILabel = {
+    private(set) var locationLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 10, weight: .medium)
+        return label
+    }()
+    
+    private(set) var lastCommitLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 10, weight: .medium)
+        label.textColor = UIColor(hexString: "#d2641b")
+        return label
+    }()
+    
+    private(set) var activeMembersLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .medium)
-        label.text =  "관악구 신림동"
         return label
     }()
     
-    private var latestTimeLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .light)
-        label.text = "4분전 활동"
-        return label
-    }()
-    
-    private var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .medium)
-        label.text = "5명이 활동중인 모임입니다."
-        return label
-    }()
-    
-    private var historyLabel: UILabel = {
+    private(set) var daysActiveLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .medium)
         label.text = "56일 동안 총 커밋 3,000회를 달성했어요."
         return label
     }()
     
-    private var memberLabel: UILabel = {
+    private(set) var memberLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .medium)
         label.text = "참여 멤버"
@@ -73,50 +71,60 @@ final class CommunityCellContentView: UIView {
     }
     
     private func configureUI() {
-        addSubview(imageView)
+        
+        let containerView = UIView()
+        containerView.backgroundColor = .white
+        containerView.layer.cornerRadius = 8
+        
+        addSubview(containerView)
+        containerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        containerView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.top.left.equalToSuperview().inset(24)
             make.size.equalTo(40)
         }
         
-        addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
+        containerView.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.top)
             make.leading.equalTo(imageView.snp.trailing).offset(16)
             make.height.equalTo(20)
         }
         
-        addSubview(addressLabel)
-        addressLabel.snp.makeConstraints { make in
-            make.leading.equalTo(titleLabel.snp.leading)
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+        containerView.addSubview(locationLabel)
+        locationLabel.snp.makeConstraints { make in
+            make.leading.equalTo(nameLabel.snp.leading)
+            make.top.equalTo(nameLabel.snp.bottom).offset(8)
             make.height.equalTo(16)
         }
         
-        addSubview(latestTimeLabel)
-        latestTimeLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(addressLabel.snp.centerY)
-            make.leading.equalTo(addressLabel.snp.trailing).offset(8)
+        containerView.addSubview(lastCommitLabel)
+        lastCommitLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(locationLabel.snp.centerY)
+            make.leading.equalTo(locationLabel.snp.trailing).offset(8)
             make.height.equalTo(16)
         }
         
-        addSubview(descriptionLabel)
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(addressLabel.snp.bottom).offset(8)
+        containerView.addSubview(activeMembersLabel)
+        activeMembersLabel.snp.makeConstraints { make in
+            make.top.equalTo(locationLabel.snp.bottom).offset(8)
             make.leading.equalTo(imageView.snp.leading)
             make.height.equalTo(20)
         }
         
-        addSubview(historyLabel)
-        historyLabel.snp.makeConstraints { make in
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(4)
-            make.leading.equalTo(descriptionLabel.snp.leading)
+        containerView.addSubview(daysActiveLabel)
+        daysActiveLabel.snp.makeConstraints { make in
+            make.top.equalTo(activeMembersLabel.snp.bottom).offset(4)
+            make.leading.equalTo(activeMembersLabel.snp.leading)
             make.height.equalTo(20)
         }
         
-        addSubview(memberLabel)
+        containerView.addSubview(memberLabel)
         memberLabel.snp.makeConstraints { make in
-            make.top.equalTo(historyLabel.snp.bottom).offset(16)
+            make.top.equalTo(daysActiveLabel.snp.bottom).offset(16)
             make.leading.equalTo(imageView.snp.leading)
             make.height.equalTo(20)
         }

@@ -16,7 +16,7 @@ final class SplashViewModel: ViewModelType {
     }
     
     struct Output { 
-        var user: PublishRelay<User?>
+        var user: PublishRelay<GithubUser?>
     }
    
     struct Coordinate: DefaultCoordinate {
@@ -41,7 +41,7 @@ final class SplashViewModel: ViewModelType {
     }
     
     func transform(_ input: Input) -> Output {
-        let user = PublishRelay<User?>()
+        let user = PublishRelay<GithubUser?>()
         
         input.transitionToNextScene
             .withUnretained(self)
